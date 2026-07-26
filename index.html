@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление коробками</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Переключатель Вкладок -->
+    <div class="nav-tabs">
+        <button id="tabWorkerBtn" class="tab-btn active">Сотрудник (Приёмка)</button>
+        <button id="tabManagerBtn" class="tab-btn">Менеджер (Определение)</button>
+    </div>
+
+    <!-- Раздел СОТРУДНИКА -->
+    <div id="workerSection">
+        <h1>Приёмка коробок</h1>
+
+        <div class="card">
+            <div class="status">
+                Статус: <span id="status">Ожидание</span>
+            </div>
+
+            <div class="number">
+                <div class="title">Номер коробки</div>
+                <div id="boxNumber">----</div>
+            </div>
+
+            <button id="createBtn">Принять коробку</button>
+        </div>
+
+        <div class="card" id="uploadBlock" style="display: none;">
+            <h2>Фотографии</h2>
+
+            <label>
+                Коробка
+                <input type="file" id="photo1" accept="image/*" capture="environment">
+            </label>
+
+            <label>
+                Содержимое
+                <input type="file" id="photo2" accept="image/*" capture="environment">
+            </label>
+
+            <label>
+                Документы
+                <input type="file" id="photo3" accept="image/*" capture="environment">
+            </label>
+
+            <button id="finishBtn">Завершить</button>
+        </div>
+    </div>
+
+    <!-- Раздел МЕНЕДЖЕРА -->
+    <div id="managerSection" style="display: none;">
+        <h1>Нужно определить</h1>
+        <button id="refreshManagerBtn">🔄 Обновить список</button>
+
+        <div id="boxesList" class="manager-list">
+            <!-- Сюда JS подгрузит коробки со статусом "На определении" -->
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

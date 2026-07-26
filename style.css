@@ -1,0 +1,221 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#111827;
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin:25px 0;
+    font-size:30px;
+}
+
+.card{
+    background:#1f2937;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.status{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+#status{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+.number{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.title{
+    color:#bdbdbd;
+    font-size:16px;
+}
+
+#boxNumber{
+    font-size:42px;
+    font-weight:bold;
+    margin-top:12px;
+    color:#3b82f6;
+}
+
+button{
+    width:100%;
+    height:58px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    background:#2563eb;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+button:hover{
+    transform:scale(1.02);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+#finishBtn{
+    margin-top:20px;
+    background:#16a34a;
+}
+
+label{
+    display:block;
+    margin-top:20px;
+    font-size:16px;
+}
+
+input[type=file]{
+    width:100%;
+    margin-top:10px;
+    background:#374151;
+    color:#fff;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+}
+
+.preview{
+    margin-top:10px;
+    width:100%;
+    border-radius:12px;
+    display:none;
+}
+
+.success{
+    color:#22c55e;
+}
+
+.wait{
+    color:#facc15;
+}
+
+.error{
+    color:#ef4444;
+}
+
+.loader{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:5px solid #2f3d52;
+    border-top:5px solid #3b82f6;
+    animation:spin 1s linear infinite;
+    margin:20px auto;
+    display:none;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@media(max-width:450px){
+
+.container{
+padding:15px;
+}
+
+h1{
+font-size:25px;
+}
+
+#boxNumber{
+font-size:34px;
+}
+
+button{
+height:55px;
+}
+
+}
+
+/* Переключатель вкладок */
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Элементы Менеджера */
+.manager-card {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.photos-container {
+    margin: 10px 0;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.photo-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
