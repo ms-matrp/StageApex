@@ -1,5 +1,5 @@
 // ⚠️ ВСТАВЬТЕ СЮДА ССЫЛКУ НА ВАШ GOOGLE APPS SCRIPT WEB APP
-const SCRIPT_URL = "https://script.google.com/macros/s/ВАШ_SCRIPT_ID/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1rzrTWv7hdSHBC0k2siOb8lnLkOdjE15n5KgfAHfeB9tQC2h7bdtxi200K7Y_WxYTVg/exec";
 
 // Элементы переключения вкладок
 const tabWorkerBtn = document.getElementById('tabWorkerBtn');
