@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Wheelie Life</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем нейросеть для удаления фона прямо в браузере -->
+    <script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/imgly-background-removal.js"></script>
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- 1. Главное меню -->
+        <div id="main-menu" class="overlay">
+            <h1 class="main-title">WHEELIE<br>LIFE</h1>
+            <p class="best-score-text">👑 Best Score: <span id="main-best-score">0</span></p>
+            
+            <div class="menu-btn-group">
+                <button id="main-play-btn" class="blue-btn">PLAY</button>
+                <button id="main-options-btn" class="blue-btn">OPTIONS</button>
+            </div>
+        </div>
+
+        <!-- 2. Гараж / Выбор Байка и Водителя -->
+        <div id="garage-menu" class="overlay hidden">
+            <div class="garage-top">
+                <button id="garage-back-btn" class="square-btn">◀</button>
+                <div class="money-badge">776$</div>
+            </div>
+
+            <p class="best-score-text">👑 Best Score: <span id="garage-best-score">0</span></p>
+
+            <div class="bike-preview-container">
+                <div id="loader" class="loader hidden">Вырезаем фон...</div>
+                <img id="bike-preview-img" src="bike.png" alt="Bike">
+            </div>
+
+            <!-- Скрытые инпуты для загрузки фото -->
+            <input type="file" id="bike-file-input" accept="image/*" style="display: none;">
+            <input type="file" id="rider-file-input" accept="image/*" style="display: none;">
+
+            <div class="upload-buttons">
+                <button id="upload-bike-btn" class="blue-btn small-btn">Загрузить свой байк</button>
+                <button id="upload-rider-btn" class="blue-btn small-btn">Загрузить водителя</button>
+            </div>
+
+            <div class="garage-controls">
+                <button class="arrow-btn">◀</button>
+                <button id="start-ride-btn" class="yellow-btn">START</button>
+                <button class="arrow-btn">▶</button>
+            </div>
+        </div>
+
+        <!-- 3. Настройки -->
+        <div id="settings-menu" class="overlay hidden">
+            <button id="settings-close-btn" class="close-x-btn">✖</button>
+            <h2 class="settings-title">SETTINGS</h2>
+
+            <div class="settings-card">
+                <a href="https://t.me" target="_blank" class="tg-btn">ПЕРЕЙТИ В TG</a>
+            </div>
+        </div>
+
+        <!-- 4. Пауза -->
+        <div id="pause-menu" class="overlay pause-overlay hidden">
+            <div class="pause-box">
+                <button id="pause-resume-btn" class="blue-btn">RESUME</button>
+                <button id="pause-restart-btn" class="blue-btn">RESTART</button>
+                <button id="pause-menu-btn" class="blue-btn">MENU</button>
+            </div>
+        </div>
+
+        <!-- 5. Game Over -->
+        <div id="gameover-overlay" class="overlay hidden">
+            <h2 class="title-go">CRASH!</h2>
+            <p class="final-score">Score: <span id="final-score-val">0</span></p>
+            <button id="restart-btn" class="blue-btn">ЗАНОВО</button>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-top">
+                <div id="timer">00:00</div>
+                <button id="pause-trigger-btn" class="pause-icon-btn">❚❚</button>
+            </div>
+            <div id="speedometer">0 km/h</div>
+            <div id="multiplier">X1</div>
+            <div id="score">Score: 0</div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Кнопки управления -->
+        <div id="controls" class="hidden">
+            <button id="btn-left" class="ctrl-btn">◀ Тормоз</button>
+            <button id="btn-up" class="ctrl-btn">▲ Колено</button>
+            <button id="btn-right" class="ctrl-btn">Газ (Вили) ▶</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
